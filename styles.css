@@ -1,11 +1,18 @@
-.column {
-    white-space: pre;
+/* Title */
+.subtitle {
+    max-width: 600px;
 }
 
+/* Form */
 #brand-selector {
     width: 200px;
 }
 
-.subtitle {
-    max-width: 600px;
+/* Display */
+.column {
+    white-space: pre;
+}
+
+#displaySection {
+    margin-top: 30px;
 }

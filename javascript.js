@@ -32,17 +32,22 @@ selectorButton.addEventListener("click", function(e) {
             deleteFocus(selector);
             return false;
         }
+        // Loop through the devices returned from API
         for (device of devices) {
             var deviceColumn = document.createElement("div");
             deviceColumn.classList.add("column", "is-one-third", "has-text-centered");
+            // Prepare and sort data to display
             var preparedDevice = prepareDeviceForDisplay(device);
+            // For each property, add a new line to display column
             for (property in preparedDevice) {
                 deviceColumn.textContent += preparedDevice[property] + "\n";
             }
             columns.appendChild(deviceColumn);
         }
+        // Clean selector and wait for next search
         selector.value = "";
         deleteFocus(selector);
+        // If button has additional features, block
         e.preventDefault();
     }, function(err) {
         var errorDiv = document.createElement("div");
@@ -70,6 +75,7 @@ selectorButton.addEventListener("click", function(e) {
         let resultObject = {
             name: device.DeviceName
         };
+        // API sends price as "About xxx", this cleans the data
         if (device.price) {
             resultObject.price = device.price.replace("About ", "");
         }
