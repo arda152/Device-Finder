@@ -5,3 +5,7 @@
 #brand-selector {
     width: 200px;
 }
+
+.subtitle {
+    max-width: 600px;
+}

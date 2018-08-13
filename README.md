@@ -1,3 +1,3 @@
 # Device-Finder
 a website for displaying mobile devices
-using fono API
+using Fono API with fetch and promises.

@@ -6,7 +6,7 @@ var selectorButton = document.getElementById("brand-selector-button");
 
 var columns = document.querySelector(".columns");
 
-
+selector.focus();
 // Listens for brand selection
 selectorButton.addEventListener("click", function(e) {
     // Clear screen
@@ -34,7 +34,7 @@ selectorButton.addEventListener("click", function(e) {
         }
         for (device of devices) {
             var deviceColumn = document.createElement("div");
-            deviceColumn.classList.add("column", "has-text-centered");
+            deviceColumn.classList.add("column", "is-one-third", "has-text-centered");
             var preparedDevice = prepareDeviceForDisplay(device);
             for (property in preparedDevice) {
                 deviceColumn.textContent += preparedDevice[property] + "\n";
@@ -44,13 +44,17 @@ selectorButton.addEventListener("click", function(e) {
         selector.value = "";
         deleteFocus(selector);
         e.preventDefault();
+    }, function(err) {
+        var errorDiv = document.createElement("div");
+        errorDiv.classList.add("column", "is-half");
+        errorDiv.textContent = "An occured with the server, please try again using a different brand name.";
+        columns.appendChild(errorDiv);
     });
-
 
     // Parses the given brand name and prepares ajax url
     // Url return 5 latest devices from brand
     function parseUrl(selectedBrand) {
-        return "https://fonoapi.freshpixl.com/v1/getlatest?brand=" + selectedBrand + "&limit=5&token=dee37f8fd64a0366bbbb958214e1a8aea0f3c4e53fc9d945"
+        return "https://fonoapi.freshpixl.com/v1/getlatest?brand=" + selectedBrand + "&limit=6&token=dee37f8fd64a0366bbbb958214e1a8aea0f3c4e53fc9d945"
     }
 
     // Function makes HTTP get request to an url

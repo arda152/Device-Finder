@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -14,26 +14,28 @@
 
 <body>
     <section class="section" id="selection-section">
+        <h1 class="title is-2 has-text-weight-light">Device Finder</h1>
+        <p class="subtitle is-4 has-text-weight-light">
+            This website uses the <a href="https://fonoapi.freshpixl.com/">Fono API</a> to get the five latest devices from mobile device manufacturers. Simply type the brand name below and press enter.
+        </p>
         <form onsubmit="return false">
-
-            <label class="label">Enter brand name</label>
             <div class="field has-addons">
                 <div class="control">
-                    <input id="brand-selector" type="text" class="input" />
+                    <input id="brand-selector" placeholder="brand name" type="text" class="input" />
                     <p class="help is-danger" id="helperText">
                     </p>
                 </div>
                 <div class="control">
-                    <input type="submit" value="Find Devices" id="brand-selector-button" class="button is-success is-outlined"></button>
+                    <input type="submit" value="Find Devices" id="brand-selector-button" class="button is-success is-outlined" />
                 </div>
             </div>
         </form>
-    </section>
-    <div class="section" id="displaySection">
-        <div class="columns">
+        <div id="displaySection">
+            <div class="columns is-multiline">
 
+            </div>
         </div>
-        </section>
+    </section>
 </body>
 
 </html>
