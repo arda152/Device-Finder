@@ -62,7 +62,7 @@ selectorButton.addEventListener("click", function(e) {
         return "https://fonoapi.freshpixl.com/v1/getlatest?brand=" + selectedBrand + "&limit=6&token=dee37f8fd64a0366bbbb958214e1a8aea0f3c4e53fc9d945"
     }
 
-    // Function makes HTTP get request to an url
+    // Function return promise containing response
     // Turns the value into JSON array
     function makeRequest(url) {
         return fetch(url).then(function(response) {
@@ -73,7 +73,7 @@ selectorButton.addEventListener("click", function(e) {
     // Takes an Array from the API and prepares an object for displaySection
     function prepareDeviceForDisplay(device) {
         let resultObject = {
-            name: device.DeviceName
+            name: device.DeviceNamegg
         };
         // API sends price as "About xxx", this cleans the data
         if (device.price) {
