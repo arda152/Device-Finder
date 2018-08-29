@@ -73,7 +73,7 @@ selectorButton.addEventListener("click", function(e) {
     // Takes an Array from the API and prepares an object for displaySection
     function prepareDeviceForDisplay(device) {
         let resultObject = {
-            name: device.DeviceNamegg
+            name: device.DeviceName
         };
         // API sends price as "About xxx", this cleans the data
         if (device.price) {
